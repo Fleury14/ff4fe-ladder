@@ -226,3 +226,73 @@ export function mockCalendarRaceCell(value) {
     )
   }
 }
+
+export const mockPlayerRankingsColumns = [
+  {
+    title: 'Category',
+    dataIndex: 'category',
+    key: 'category'
+  },
+  {
+    title: 'Record',
+    dataIndex: 'record',
+    key: 'record'
+  },
+  {
+    title: 'Rank',
+    dataIndex: 'rank',
+    key: 'rank',
+    className: 'righteous',
+  },
+  {
+    title: 'Rating',
+    dataIndex: 'rating',
+    key: 'rating',
+    className: 'righteous'
+  },
+]
+
+export const mockPlayerLifeTimeRanking = [
+  {
+    key: 1,
+    category: 'Global',
+    record: '39-11-0  (78%)',
+    rank: 3,
+    rating: 2000
+  },
+  {
+    key: 1,
+    category: 'Beginner',
+    record: '39-11-0  (78%)',
+    rank: 3,
+    rating: 2000
+  },
+  {
+    key: 1,
+    category: 'Push B 2 Jump',
+    record: '12-3-0  (80%)',
+    rank: 3,
+    rating: 1978
+  },
+  {
+    key: 1,
+    category: 'Hero',
+    record: '7-5-0  (58%)',
+    rank: 21,
+    rating: 1644
+  },
+  {
+    key: 1,
+    category: 'Mystery',
+    record: '9-2-0  (81%)',
+    rank: 4,
+    rating: 1930
+  },
+  {
+    key: 1,
+    category: 'LHL Bracket',
+    record: '11-1-0  (92%)',
+    rank: 1,
+    rating: 2175
+  },
+]
