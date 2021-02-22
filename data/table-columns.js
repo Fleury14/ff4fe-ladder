@@ -42,7 +42,8 @@ export const bigRankingsColumns = [
     dataIndex: 'RacerName',
     key: 'RacerName',
     sorter: (a, b) => a.RacerName - b.RacerName,
-    sortDirections: ['ascend', 'descend']
+    sortDirections: ['ascend', 'descend'],
+    render: (text, record) => <Link href={`/player-detail?id=${record.id}`}>{text}</Link>
   },
   {
     title: 'Rating',
@@ -89,7 +90,7 @@ export const bigRankingsColumns = [
     dataIndex: 'Total',
     key: 'Total',
     className: 'righteous',
-    sorter: (a, b) => a.totale - b.total,
+    sorter: (a, b) => a.Total - b.Total,
     sortDirections: ['ascend', 'descend']
   },
   {
