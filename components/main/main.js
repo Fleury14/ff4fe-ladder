@@ -6,16 +6,21 @@ import {
   mockScheduledRaces,
   mockScheduledRacesColumns
 } from '../../data/mock';
+import { topTenColumns } from '../../data/table-columns';
 import styles from './main.module.scss';
 
 const Main = (props) => {
+  console.log('props', props);
+  const { rankings } = props;
+  if (rankings.length > 10) rankings = rankings.slice(0, 10);
+  rankings.forEach((rank, index) => rank.key = index + 1);
   return (
     <>
       <div className={`main ${styles.mainContainer}`}>
         <div className={styles.tableRow}>
           <Table
-            columns={mockTopTenColumns}
-            dataSource={mockTopTen}
+            columns={topTenColumns}
+            dataSource={rankings}
             title={() => <span className={`${styles.tableHeader}`}>Current Season Zero Rankings (Top 10)</span>}
             footer={() => <span className={`${styles.tableHeader}`}>Show All Rankings</span>}
             showHeader={false}

@@ -11,11 +11,11 @@ export async function getStaticProps() {
       const activeSeason = data.find(season => season.IsCurrentSeason === true);
       if (activeSeason) {
         console.log('active season found:', activeSeason);
-        currentSeason = activeSeason;
+        currentSeason = activeSeason.season_id;
       }
     });
 
-  const rankingResponse = await fetch(`${process.env.API_ADDR}/GetRankings?season_id=${currentSeason}&flag_id=0`)
+  const rankingResponse = await fetch(`${process.env.API_ADDR}/GetStandings?season_id=${currentSeason}&flag_id=0`)
     .then(response => response.json())
     .then(data => results = data);
 
