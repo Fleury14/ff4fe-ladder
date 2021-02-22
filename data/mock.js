@@ -57,7 +57,8 @@ export const mockTopTenColumns = [
   {
     title: 'Name',
     dataIndex: 'name',
-    key: 'name'
+    key: 'name',
+    render: text => <Link href={`/player-detail?id=${text}`}>{text}</Link>
   },
   {
     title: 'Score',
