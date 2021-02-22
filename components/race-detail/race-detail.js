@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './race-detail.module.scss';
 import { Badge } from 'antd';
+import Link from 'next/link';
 
 const RaceDetail = (props) => {
   if (!props || !props.id) return <h1>No race selected</h1>
@@ -14,7 +15,7 @@ const RaceDetail = (props) => {
         <div className={styles.resultContainer}>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>Fleury14</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>Fleury14</p></Link>
               <Badge count={"+20"} style={{ backgroundColor: '#52c41a', marginLeft: 20}} />
             </div>
             
@@ -22,7 +23,7 @@ const RaceDetail = (props) => {
           </div>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>pk4787</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>pk4787</p></Link>
               <Badge count={"-20"} style={{ marginLeft: 20}} />
             </div>
             
@@ -37,7 +38,7 @@ const RaceDetail = (props) => {
         <div className={styles.resultContainer}>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>Asuka424</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>Asuka424</p></Link>
               <Badge count={"+20"} style={{ backgroundColor: '#52c41a', marginLeft: 20}} />
             </div>
             
@@ -45,7 +46,7 @@ const RaceDetail = (props) => {
           </div>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>BakaShinobi</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>BakaShinobi</p></Link>
               <Badge count={"-20"} style={{ marginLeft: 20}} />
             </div>
             
@@ -60,7 +61,7 @@ const RaceDetail = (props) => {
         <div className={styles.resultContainer}>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>SchalaKitty</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>SchalaKitty</p></Link>
               <Badge count={"+18"} style={{ backgroundColor: '#52c41a', marginLeft: 20}} />
             </div>
             
@@ -68,7 +69,7 @@ const RaceDetail = (props) => {
           </div>
           <div className={styles.resultRow}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <p className={styles.runnerName}>Invenerable</p>
+              <Link href="/player-detail?id=12345"><p className={styles.runnerName}>Invenerable</p></Link>
               <Badge count={"-18"} style={{ marginLeft: 20}} />
             </div>
             

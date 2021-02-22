@@ -220,6 +220,7 @@ export const mockScheduledRacesColumns = [
     title: 'Flagset',
     dataIndex: 'flagset',
     key: 'flagset',
+    render: text => <Link href={`/race-detail?id=${text}`}>{text}</Link>
   },
   {
     title: 'Time',
