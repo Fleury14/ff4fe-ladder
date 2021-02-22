@@ -12,7 +12,11 @@
     color: #fff;
     padding: 10px 0px;
     border-radius: 5px;
-    border: solid 5px lighten(#01032a, 80)
+    border: solid 5px #3190ff;
+}
+
+.tableWrapper {
+    margin: 20px;
 }
 
 .bigNumber {
@@ -34,9 +38,22 @@
 
 }
 
+.tableHeader {
+    text-align: center;
+    margin: 0;
+}
+
 .tableCol {
     width: 50%;
     padding: 20px;
+}
+
+.win {
+    background-color: #cfc;
+}
+
+.loss {
+    background-color: #fcc;
 }
 
 @media only screen and (max-width: 578px) {

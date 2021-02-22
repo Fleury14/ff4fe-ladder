@@ -227,6 +227,87 @@ export function mockCalendarRaceCell(value) {
   }
 }
 
+export const mockPlayerHistoryColumns = [
+  {
+    title: 'Result',
+    dataIndex: 'result',
+    key: 'result'
+  },
+  {
+    title: 'Opponent',
+    dataIndex: 'opponent',
+    key: 'opponent'
+  },
+  {
+    title: 'Category',
+    dataIndex: 'category',
+    key: 'category',
+    responsive: ['sm']
+  },
+  {
+    title: 'Date',
+    dataIndex: 'date',
+    key: 'date',
+    responsive: ['sm']
+  },
+  {
+    title: 'Race',
+    dataIndex: 'race',
+    key: 'race'
+  }
+];
+
+export const mockPlayerHistory = [
+  {
+    result: 'Win',
+    opponent: 'pk4787',
+    category: 'LHL Swiss',
+    date: '2/20/21 7pm',
+    race: '#abcde',
+    key: 1
+  },
+  {
+    result: 'Win',
+    opponent: 'Fleury14',
+    category: 'Hero',
+    date: '2/20/21 4pm',
+    race: '#abcde',
+    key: 2
+  },
+  {
+    key: 3,
+    result: 'Loss',
+    opponent: 'Antidale',
+    category: 'Push B 2 Jump',
+    date: '2/19/21 10pm',
+    race: '#abcde'
+  },
+  {
+    key: 4,
+    result: 'Loss',
+    opponent: 'Invenerable',
+    category: 'Mystery',
+    date: '2/19/21 1pm',
+    race: '#abcde'
+  },
+  {
+    key: 5,
+    result: 'Win',
+    opponent: 'BakaShinobi',
+    category: 'Beginner',
+    date: '2/19/21 6am',
+    race: '#abcde'
+  },
+  {
+    key: 6,
+    result: 'Loss',
+    opponent: 'Asuka424',
+    category: 'LHL Swiss',
+    date: '2/17/21 7pm',
+    race: '#abcde'
+  },
+];
+
 export const mockPlayerRankingsColumns = [
   {
     title: 'Category',
@@ -236,7 +317,8 @@ export const mockPlayerRankingsColumns = [
   {
     title: 'Record',
     dataIndex: 'record',
-    key: 'record'
+    key: 'record',
+    responsive: ['sm']
   },
   {
     title: 'Rank',
@@ -261,35 +343,35 @@ export const mockPlayerLifeTimeRanking = [
     rating: 2000
   },
   {
-    key: 1,
+    key: 2,
     category: 'Beginner',
     record: '39-11-0  (78%)',
     rank: 3,
     rating: 2000
   },
   {
-    key: 1,
+    key: 3,
     category: 'Push B 2 Jump',
     record: '12-3-0  (80%)',
     rank: 3,
     rating: 1978
   },
   {
-    key: 1,
+    key: 4,
     category: 'Hero',
     record: '7-5-0  (58%)',
     rank: 21,
     rating: 1644
   },
   {
-    key: 1,
+    key: 5,
     category: 'Mystery',
     record: '9-2-0  (81%)',
     rank: 4,
     rating: 1930
   },
   {
-    key: 1,
+    key: 6,
     category: 'LHL Bracket',
     record: '11-1-0  (92%)',
     rank: 1,

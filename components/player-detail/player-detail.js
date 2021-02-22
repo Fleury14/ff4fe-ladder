@@ -1,7 +1,7 @@
 import { PresetColorTypes } from "antd/lib/_util/colors";
 import React from "react";
 import { Row, Col, Table } from 'antd';
-import { mockPlayerRankingsColumns, mockPlayerLifeTimeRanking } from '../../data/mock';
+import { mockPlayerRankingsColumns, mockPlayerLifeTimeRanking, mockPlayerHistory, mockPlayerHistoryColumns } from '../../data/mock';
 import styles from './player-detail.module.scss';
 
 const PlayerDetail = (props) => {
@@ -28,16 +28,44 @@ const PlayerDetail = (props) => {
           <span className={`righteous ${styles.bigNumber}`}>78%</span>
         </Col>
       </Row>
-      <div className={styles.tableRow}>
-        <div className={styles.tableCol}>
-          <Table
-            columns={mockPlayerRankingsColumns}
-            dataSource={mockPlayerLifeTimeRanking}
-            title={() => <span className={`${styles.tableHeader}`}>Lifetime Stats</span>}
-          />
-        </div>
-        <div className={styles.tableCol}></div>
-      </div>
+      <Row className={styles.fullRow}>
+        <Col lg={{ span: 12 }} md={{ span: 24}} sm={{ span: 24 }} xs={{ span: 24 }}>
+          <div className={styles.tableWrapper}>
+            <Table
+              columns={mockPlayerRankingsColumns}
+              dataSource={mockPlayerLifeTimeRanking}
+              title={() => <p className={`${styles.tableHeader}`}>Lifetime Stats</p>}
+              className="rank-table"
+              pagination={false}
+              size="small"
+            />
+            <Table
+              columns={mockPlayerRankingsColumns}
+              dataSource={mockPlayerLifeTimeRanking}
+              title={() => <p className={`${styles.tableHeader}`}>Lifetime Stats</p>}
+              className="rank-table"
+              pagination={false}
+              size="small"
+            />
+          </div>
+        </Col>
+        <Col lg={{ span: 12 }} md={{ span: 24}} sm={{ span: 24 }} xs={{ span: 24 }}>
+          <div className={styles.tableWrapper}>
+            <Table
+              columns={mockPlayerHistoryColumns}
+              dataSource={mockPlayerHistory}
+              title={() => <p className={`${styles.tableHeader}`}>Recent Matches</p>}
+              className="rank-table"
+              size="small"
+              onRow={(record, rowIndex) => {
+                return {
+                  className: record.result === 'Win' ? styles.win : styles.loss
+                };
+              }}
+            />
+          </div>
+        </Col>
+      </Row>
     </div>
   )
 }
