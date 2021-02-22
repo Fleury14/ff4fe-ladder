@@ -99,6 +99,26 @@ export const mockScheduledRaces = [
     flagset: "Hero",
     time: '3/12/2021 11:00pm'
   },
+  {
+    key: 7,
+    flagset: "Beginner",
+    time: '3/13/2021 5:00am'
+  },
+  {
+    key: 8,
+    flagset: "LHL Table",
+    time: '3/13/2021 11:00am'
+  },
+  {
+    key: 9,
+    flagset: "Loot Goblin",
+    time: '3/13/2021 4:00pm'
+  },
+  {
+    key: 10,
+    flagset: "Mystery",
+    time: '3/13/2021 9:00pm'
+  },
 ]
 
 export const mockRankingsColumns = [

@@ -32,6 +32,7 @@ const Main = (props) => {
             showHeader={false}
             pagination={false}
             className={styles.mainTable}
+            size="small"
           />
         </div>
       </div>
