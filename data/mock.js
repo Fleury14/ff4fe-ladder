@@ -236,7 +236,8 @@ export const mockPlayerHistoryColumns = [
   {
     title: 'Opponent',
     dataIndex: 'opponent',
-    key: 'opponent'
+    key: 'opponent',
+    render: (text) => <Link href={`/player-detail?id=${text}`}>{text}</Link>
   },
   {
     title: 'Category',
@@ -253,7 +254,8 @@ export const mockPlayerHistoryColumns = [
   {
     title: 'Race',
     dataIndex: 'race',
-    key: 'race'
+    key: 'race',
+    render: (text, record) => <Link href={`/race-detail?id=${text.slice(1)}`}>{text}</Link>
   }
 ];
 
