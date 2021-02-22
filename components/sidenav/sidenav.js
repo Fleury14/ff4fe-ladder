@@ -15,10 +15,12 @@ import Rankings from '../rankings/rankings';
 import QuoteGenerator from '../quote-generator/quote-generator';
 
 const SideNav = (props) => {
+  const { collapsed } = props;
   return (
     <div className={styles.sideNav}>
       <div className={`logo ${styles.logoQuote}`}>
-        <QuoteGenerator />
+        {!collapsed ? <QuoteGenerator /> : <p>&nbsp;</p>}
+        
       </div>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<UserOutlined />}>

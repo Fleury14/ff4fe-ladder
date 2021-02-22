@@ -17,7 +17,7 @@ const PageLayout = (props) => {
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <SideNav />
+        <SideNav collapsed={collapsed} />
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0, display: 'flex', alignItems: 'center' }}>
