@@ -54,7 +54,7 @@ main {
   min-height: 100vh;
 }
 
-.main .ant-table-title {
+main .ant-table-title {
   background-color: #03142a;
   color: white;
 }
@@ -62,6 +62,12 @@ main {
 .main .ant-table-footer {
   color: #000;
   text-align: center;
+}
+
+
+.rank-table {
+  border: 5px solid #3190ff;
+  margin-bottom: 20px;
 }
 
 .calendar-list li {

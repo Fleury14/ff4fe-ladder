@@ -1,0 +1,67 @@
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topRowBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #01032a;
+    color: #fff;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: solid 5px #3190ff;
+}
+
+.tableWrapper {
+    margin: 20px;
+}
+
+.bigNumber {
+    font-size: 30px;
+}
+
+.fullRow {
+    width: 100%;
+}
+
+.playerTitle {
+    font-size: 36px;
+    margin: 20px;
+}
+
+.tableRow {
+    display: flex;
+    width: 100%;
+
+}
+
+.tableHeader {
+    text-align: center;
+    margin: 0;
+}
+
+.tableCol {
+    width: 50%;
+    padding: 20px;
+}
+
+.win {
+    background-color: #cfc;
+}
+
+.loss {
+    background-color: #fcc;
+}
+
+@media only screen and (max-width: 578px) {
+    .tableRow {
+        flex-direction: column;
+    }
+
+    .tableCol {
+        width: 100%;
+    }
+}
