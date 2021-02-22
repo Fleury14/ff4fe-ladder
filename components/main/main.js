@@ -1,19 +1,15 @@
 import React from 'react';
 import { Table } from 'antd';
-import { 
-  mockTopTen,
-  mockTopTenColumns,
-  mockScheduledRaces,
-  mockScheduledRacesColumns
-} from '../../data/mock';
-import { topTenColumns } from '../../data/table-columns';
+import { topTenColumns, scheduledRacesColumns } from '../../data/table-columns';
 import styles from './main.module.scss';
 
 const Main = (props) => {
   console.log('props', props);
-  const { rankings } = props;
+  const { rankings, schedule } = props;
   if (rankings.length > 10) rankings = rankings.slice(0, 10);
   rankings.forEach((rank, index) => rank.key = index + 1);
+  if (schedule.length > 10) schedule = schedule.slice(0, 10);
+  schedule.forEach((race, index) => race.key = index + 1);
   return (
     <>
       <div className={`main ${styles.mainContainer}`}>
@@ -30,8 +26,8 @@ const Main = (props) => {
             
           />
           <Table
-            columns={mockScheduledRacesColumns}
-            dataSource={mockScheduledRaces}
+            columns={scheduledRacesColumns}
+            dataSource={schedule}
             title={() => <span className={styles.tableHeader}>Next schedule races (all times eastern)</span>}
             footer={() => <span className={`${styles.tableHeader}`}>View Schedule</span>}
             showHeader={false}

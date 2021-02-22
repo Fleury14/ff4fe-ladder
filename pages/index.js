@@ -5,6 +5,7 @@ import Main from '../components/main/main';
 export async function getStaticProps() {
   let currentSeason = 1;
   let results = [];
+  let schedule = [];
   const seasonResponse = await fetch(`${process.env.API_ADDR}/GetSeasons`)
     .then(response => response.json())
     .then(data => {
@@ -16,17 +17,28 @@ export async function getStaticProps() {
     });
 
   const rankingResponse = await fetch(`${process.env.API_ADDR}/GetStandings?season_id=${currentSeason}&flag_id=0`)
-    .then(response => response.json())
-    .then(data => results = data);
+  results = await rankingResponse.json();
 
-    return {
-      props: {
-        rankings: results
-      }
-    };
+  const scheduleResponse = await fetch(`${process.env.API_ADDR}/GetSchedule?season_id=${currentSeason}`)
+  schedule = await scheduleResponse.json();
+
+  const exampleProps = {
+      schedule: schedule,
+      rankings: results,
+  }
+
+  console.log(exampleProps);
+ 
+  return {
+    props: {
+      schedule: schedule,
+      rankings: results,
+      
+    }
+  };
 }
 
-export default function Home({ rankings }) {
+export default function Home({ rankings, schedule }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,7 +47,7 @@ export default function Home({ rankings }) {
       </Head>
 
       <div className={styles.main}>
-        <Main rankings={rankings} />
+        <Main rankings={rankings} schedule={schedule}/>
       </div>
 
       
