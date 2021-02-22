@@ -15,16 +15,29 @@ export async function getCurrentSeason() {
 }
 
 export async function getRankings({ season, flag }) {
+  let results = [];
   if (!season) season = 0;
   if (!flag) flag = 0;
+
+  const activeRacerList = await fetch(`${process.env.API_ADDR}/GetActiveRacers`);
+  const racerList = await activeRacerList.json();
 
   const rankingResponse = await fetch(`${process.env.API_ADDR}/GetStandings?season_id=${season}&flag_id=0`)
   results = await rankingResponse.json();
 
+  results.forEach((result, index) => {
+    result.key = index + 1;
+    result.Total = result.Wins + result.Losses + result.Ties;
+    result.WinPercent = Math.round((result.Wins / result.Total) * 100);
+    const racerRecord = racerList.find(racer => racer.RacerName === result.RacerName);
+    if (racerRecord && racerRecord.racer_id) result.id = racerRecord.racer_id;
+  });
+
   return results;
 }
 
-export function getSchedule({ season }) {
+export async function getSchedule({ season }) {
+  let schedule = [];
   if (!season) season = 0;
   
   const scheduleResponse = await fetch(`${process.env.API_ADDR}/GetSchedule?season_id=${season}`)

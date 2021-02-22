@@ -27,3 +27,77 @@ export const scheduledRacesColumns = [
     key: 'StartTime'
   }
 ]
+
+export const bigRankingsColumns = [
+  {
+    title: 'Rank',
+    dataIndex: 'Rank',
+    key: 'Rank',
+    className: 'righteous',
+    sorter: (a, b) => a.Rank - b.Rank,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Racer',
+    dataIndex: 'RacerName',
+    key: 'RacerName',
+    sorter: (a, b) => a.RacerName - b.RacerName,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Rating',
+    dataIndex: 'Rating',
+    key: 'Rating',
+    className: 'righteous',
+    sorter: (a, b) => a.Rating - b.Rating,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Last Change',
+    dataIndex: 'Change',
+    key: 'Change',
+    className: 'righteous',
+    sorter: (a, b) => a.Change - b.Change,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Wins',
+    dataIndex: 'Wins',
+    key: 'Wins',
+    className: 'righteous',
+    sorter: (a, b) => a.Wins - b.Wins,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Losses',
+    dataIndex: 'Losses',
+    key: 'Losses',
+    className: 'righteous',
+    sorter: (a, b) => a.Losses - b.Losses,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Ties',
+    dataIndex: 'Ties',
+    key: 'Ties',
+    className: 'righteous',
+    sorter: (a, b) => a.Ties - b.Ties,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Total',
+    dataIndex: 'Total',
+    key: 'Total',
+    className: 'righteous',
+    sorter: (a, b) => a.totale - b.total,
+    sortDirections: ['ascend', 'descend']
+  },
+  {
+    title: 'Win %',
+    dataIndex: 'WinPercent',
+    key: 'WinPercent',
+    className: 'righteous',
+    sorter: (a, b) => a.winPercent - b.winPercent,
+    sortDirections: ['ascend', 'descend']
+  },
+]

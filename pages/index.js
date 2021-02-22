@@ -8,8 +8,8 @@ export async function getStaticProps() {
   let schedule = [];
   const currentSeason = await getCurrentSeason();
 
-  results = await getRankings({ season });  
-  schedule = await getSchedule({ season });
+  results = await getRankings({ season: currentSeason });  
+  schedule = await getSchedule({ season: currentSeason });
  
   return {
     props: {
