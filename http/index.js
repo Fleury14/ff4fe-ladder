@@ -45,3 +45,16 @@ export async function getSchedule({ season }) {
 
   return schedule;
 }
+
+export async function getPlayerData({ id, season, flag, api }) {
+  let stats = [];
+  if (!id) return [];
+  if (!season) season = 0;
+  if (!flag) flag = 0;
+
+  const statsResponse = await fetch(`${process.env.API_ADDR}/GetRacerStandings?racer_id=${id}&season_id=${season}&flag_id=${flag}`);
+  stats = statsResponse.json();
+  stats.WinPercent = Math.round(stats.Wins / (stats.Wins + stats.Losses + stats.Ties) * 100)
+  console.log('sending')
+  return stats;
+}
